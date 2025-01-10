@@ -42,6 +42,7 @@ vector_store = Chroma.from_documents(
 
 retriever = vector_store.as_retriever()
 
+# Prompt para a IA se comportar como um assistente de pesquisa usando o RAG
 prompt = hub.pull('rlm/rag-prompt')
 
 rag_chain = (
