@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI, OpenAI
 from langchain_core.output_parsers import StrOutputParser
 
-
+# Função que inicializa os parâmetros necess
 def initial_parameters() -> tuple:
     load_dotenv()
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -18,8 +18,10 @@ def initial_parameters() -> tuple:
 
 model, parser, client = initial_parameters() 
 
+# Criação do banco de dados
 db = SQLDatabase.from_uri('sqlite:///ipca.db')
 
+# Criação do toolkit
 toolkit = SQLDatabaseToolkit(
     db=db,
     llm=model,
