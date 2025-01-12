@@ -26,14 +26,18 @@ toolkit = SQLDatabaseToolkit(
     db=db,
     llm=model,
 )
+
+# Puxa pormpt do hub para o agente
 system_message = hub.pull('hwchase17/react')
 
+# Criação do agente
 agent = create_react_agent(
     llm=model,
     tools=toolkit.get_tools(),
     prompt=system_message,
 )
 
+# Criação do executor
 agent_executor = AgentExecutor(
     agent=agent,
     tools=toolkit.get_tools(),
@@ -52,6 +56,7 @@ Baseado nos dados históricos de IPCA desde 2004,
 faça uma previsão dos valores de IPCA de cada mês futuro até o final de 2024.
 '''
 
+# Invoque o agente
 output = agent_executor.invoke({
     'input': prompt_template.format(q=question)
 })
