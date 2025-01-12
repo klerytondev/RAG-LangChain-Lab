@@ -56,6 +56,7 @@ Baseado nos dados históricos de IPCA desde 2004,
 faça uma previsão dos valores de IPCA de cada mês futuro até o final de 2024.
 '''
 
+# Invoque o agente
 output = agent_executor.invoke({
     'input': prompt_template.format(q=question)
 })
