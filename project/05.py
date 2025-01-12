@@ -26,7 +26,10 @@ toolkit = SQLDatabaseToolkit(
     db=db,
     llm=model,
 )
+
+# Puxa pormpt do hub para o agente
 system_message = hub.pull('hwchase17/react')
+
 
 agent = create_react_agent(
     llm=model,
