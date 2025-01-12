@@ -37,6 +37,7 @@ agent = create_react_agent(
     prompt=system_message,
 )
 
+# Criação do executor
 agent_executor = AgentExecutor(
     agent=agent,
     tools=toolkit.get_tools(),
