@@ -18,10 +18,12 @@ def initial_parameters() -> tuple:
 
 model, parser, client = initial_parameters() 
 
+# Criação do banco de dados
 pdf_path = 'data/laptop_manual.pdf'
 loader = PyPDFLoader(pdf_path)
 docs = loader.load()
 
+# Criação do toolkit
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=1000,
     chunk_overlap=200,
