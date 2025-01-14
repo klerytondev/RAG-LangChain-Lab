@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI, OpenAI
 from langchain_core.output_parsers import StrOutputParser
 
-
+# Defini a função que inicializa os parâmetros necessários
 def initial_parameters() -> tuple:
     load_dotenv()
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
