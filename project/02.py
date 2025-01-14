@@ -38,6 +38,7 @@ persist_directory = 'db'
 # Criação do executor
 embedding = OpenAIEmbeddings()
 
+# Criação do Chroma
 vector_store = Chroma.from_documents(
     documents=chunks,
     embedding=embedding,
