@@ -32,9 +32,12 @@ chunks = text_splitter.split_documents(
     documents=docs,
 )
 
+# Criação do agente
 persist_directory = 'db'
 
+# Criação do executor
 embedding = OpenAIEmbeddings()
+
 vector_store = Chroma.from_documents(
     documents=chunks,
     embedding=embedding,
